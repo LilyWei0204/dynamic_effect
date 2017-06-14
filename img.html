@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片处理</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!--        ****************************双击图片放大、缩小S*******************************      -->
+<img src="images/001.jpg" alt="" width="200" height="200" default_width=200 default_height=200 id="img">
+
+<!--        ****************************双击图片放大、缩小E*******************************      -->
+
+
+<!--        ****************************鼠标移入其余图片模糊S        纯css不支持ie浏览器*******************************      -->
+
+<h1>Gallary of products</h1>
+<p>Hover one of the products</p>
+<div class="wrapper">
+    <div class="box">
+        <div class="product">
+            <span class="name">T-shirt</span>
+            <span class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+        </div>
+    </div>
+    <div class="box">
+        <div class="product">
+            <span class="name">T-shirt</span>
+            <span class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+        </div>
+    </div>
+    <div class="box">
+        <div class="product">
+            <span class="name">T-shirt</span>
+            <span class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+        </div>
+    </div>
+</div>
+<!--        ****************************鼠标移入其余图片模糊 E*******************************      -->
+
+
+
+
+</body>
+<script>
+    var img = document.getElementById("img");
+
+    dbimg(img);
+    //双击图片    放大、缩小
+    function dbimg(img){
+        img.ondblclick = function(){
+            if(this.width == this.attributes['default_width'].value && this.height == this.attributes['default_height'].value){
+                this.width *=2;
+                this.height *= 2;
+            }else{
+                this.width = this.attributes['default_width'].value ;
+                this.height = this.attributes['default_height'].value;
+            }
+        }
+    }
+
+
+</script>
+</html>

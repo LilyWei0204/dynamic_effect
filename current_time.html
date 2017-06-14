@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取当前时间</title>
+</head>
+<body>
+<div class="time"></div>
+<div class="date"></div>
+
+</body>
+<script>
+    var time=document.getElementsByClassName("time")[0];
+    currentTime(time);
+
+//  获取当前时间
+    function currentTime(ele){
+        setInterval(function(){
+            var date = new Date();
+            var seperator1 = "-";
+            var seperator2 = ":";
+            var month = date.getMonth() + 1;
+            var strDate = date.getDate();
+            if (month >= 1 && month <= 9) {
+                month = "0" + month;
+            }
+            if (strDate >= 0 && strDate <= 9) {
+                strDate = "0" + strDate;
+            }
+            var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
+                    + " " + date.getHours() + seperator2 + date.getMinutes()
+                    + seperator2 + date.getSeconds();
+            ele.innerHTML=currentdate;
+        },1000);
+    }
+
+    var date=document.getElementsByClassName("date")[0];
+    getDate(date);
+//    获取当前日期
+    function getDate(obj) {
+        var today=new Date();
+        var year=today.getFullYear();
+        var month=today.getMonth() + 1;
+        var day=today.getDate();
+        if (month >= 1 && month <= 9) {
+            month = "0" + month;
+        }
+        if (day >= 0 && day <= 9) {
+            day = "0" + day;
+        }
+        var date=year+"-"+month+"-"+day;
+        obj.innerHTML= date;
+    }
+
+
+</script>
+</html>
